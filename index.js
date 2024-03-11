@@ -8,13 +8,14 @@ const {PORT,API_KEY} = process.env;
 
 app.use(express.json());
 app.use(express.static("public"));
-app.use(cors({
-    origin:["localhost:8084","BrainFlix-Special-apiKey"]
-}));
+app.use(cors());
 
 app.use("/",videos);
 
+// app.get("/test",(req,res)=>{
+//     res.send("successfully connected!")
+// })
 
 app.listen(PORT,()=>{
-    console.log(`server running at PORT: http://localhost: ${PORT}`);
+    console.log(`server running at PORT :  ${PORT}`);
 });
